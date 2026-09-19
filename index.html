@@ -1,134 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>For You ❤️</title>
+    <title>A Little Surprise ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-<!-- =========================
-     BACKGROUND
-========================= -->
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
 
-<div class="stars"></div>
+    <div class="background-glow"></div>
 
-<div id="hearts-container"></div>
+    <div class="stars"></div>
 
-<!-- =========================
-     MUSIC
-========================= -->
-
-<audio id="bgMusic" loop>
-    <source src="music/love.mp3" type="audio/mpeg">
-</audio>
+    <div id="hearts-container"></div>
 
 
-<!-- =========================
-     MAIN APP
-========================= -->
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
 
-<main id="app">
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto"
+    >
 
-    <!-- =====================
-         SCREEN 1
-    ====================== -->
+        <source
+            src="music/love.mp3"
+            type="audio/mpeg"
+        >
 
-    <section class="screen active" id="screen1">
-
-        <div class="glass-card">
-
-            <div class="small-label">
-                A LITTLE SURPRISE
-            </div>
-
-            <h1>
-                Hey You...
-            </h1>
-
-            <p>
-                I made something special for you ❤️
-            </p>
-
-            <div class="gift">
-                🎁
-            </div>
-
-            <button onclick="nextScreen()">
-                Open Your Surprise ✨
-            </button>
-
-        </div>
-
-    </section>
+    </audio>
 
 
-    <!-- =====================
-         SCREEN 2
-    ====================== -->
+    <!-- =========================
+         MAIN APP
+    ========================== -->
 
-    <section class="screen" id="screen2">
+    <main id="app">
 
-        <div class="glass-card birthday">
 
-            <div class="balloons">
+        <!-- =====================
+             SCREEN 1
+        ====================== -->
 
-                <span>🎈</span>
-                <span>🎈</span>
-                <span>🎈</span>
+        <section
+            class="screen active"
+            id="screen1"
+        >
+
+            <div class="glass-card intro-card">
+
+                <div class="small-label">
+                    A LITTLE SURPRISE
+                </div>
+
+                <h1>
+                    Hey You...
+                </h1>
+
+                <p>
+                    I made something special
+                    just for you.
+                </p>
+
+                <div class="gift">
+                    🎁
+                </div>
+
+                <button onclick="nextScreen()">
+                    Open Your Surprise ✨
+                </button>
 
             </div>
 
-            <div class="cake">
-                🎂
+        </section>
+
+
+        <!-- =====================
+             SCREEN 2
+        ====================== -->
+
+        <section
+            class="screen"
+            id="screen2"
+        >
+
+            <div class="glass-card birthday-card">
+
+                <div class="balloons">
+
+                    <span>🎈</span>
+                    <span>🎈</span>
+                    <span>🎈</span>
+
+                </div>
+
+                <div class="cake">
+                    🎂
+                </div>
+
+                <div class="small-label">
+                    TODAY IS YOUR DAY
+                </div>
+
+                <h1 class="birthday-title">
+                    Happy Birthday
+                </h1>
+
+                <h2>
+                    Syeda Iffat Fatema Naqvi ❤️
+                </h2>
+
+                <p>
+                    May your smile stay brighter
+                    than every star in the sky.
+                </p>
+
+                <p>
+                    And may every beautiful dream
+                    find its way to you.
+                </p>
+
+                <button onclick="nextScreen()">
+                    There's More 💕
+                </button>
+
             </div>
 
-            <h1 class="birthday-title">
-                Happy Birthday
-            </h1>
-
-            <h2>
-                Syeda Iffat Fatema Naqvi ❤️
-            </h2>
-
-            <p>
-                May your smile stay brighter than
-                every star in the sky.
-            </p>
-
-            <button onclick="nextScreen()">
-                There’s More 💕
-            </button>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =====================
-         SCREEN 3
-    ====================== -->
+        <!-- =====================
+             SCREEN 3
+        ====================== -->
 
-    <section class="screen" id="screen3">
+        <section
+            class="screen"
+            id="screen3"
+        >
 
-        <div class="story-card">
+            <div class="story-card">
 
-            <div class="character-area">
+                <div class="character-area">
 
-                <div class="cartoon">
+                    <!-- Cartoon -->
+
+                    <div class="cartoon">
+
+                        <div class="hair"></div>
+
+                        <div class="head">
+
+                            <div class="eye left"></div>
+
+                            <div class="eye right"></div>
+
+                            <div class="blush left"></div>
+
+                            <div class="blush right"></div>
+
+                            <div class="mouth">
+                                ⌣
+                            </div>
+
+                        </div>
+
+                        <div class="body"></div>
+
+                        <div class="arm left-arm"></div>
+
+                        <div class="arm right-arm"></div>
+
+                        <div class="leg left-leg"></div>
+
+                        <div class="leg right-leg"></div>
+
+                    </div>
+
+
+                    <div class="floating-heart">
+                        ❤️
+                    </div>
+
+                </div>
+
+
+                <div class="story-text">
+
+                    <span class="chapter">
+                        CHAPTER 01
+                    </span>
+
+                    <h1>
+                        A Beautiful Beginning
+                    </h1>
+
+                    <p>
+                        Some people enter our lives
+                        quietly...
+                    </p>
+
+                    <p>
+                        And somehow,
+                        everything starts feeling
+                        a little brighter.
+                    </p>
+
+                    <p>
+                        This little story is about
+                        one of those people.
+                    </p>
+
+                </div>
+
+
+                <button onclick="nextScreen()">
+                    Continue Our Story →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             SCREEN 4
+        ====================== -->
+
+        <section
+            class="screen"
+            id="screen4"
+        >
+
+            <div class="memory-card">
+
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="images/myimage.jpg"
+                        alt="My Special Memory"
+                    >
+
+                    <div class="photo-shine"></div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span>
+                        A LITTLE MEMORY
+                    </span>
+
+                    <h1>
+                        You Make Ordinary
+                        Moments Special.
+                    </h1>
+
+                    <p>
+                        Maybe it is just a picture...
+                    </p>
+
+                    <p>
+                        But behind every picture
+                        there is a feeling,
+                        a moment,
+                        and a memory.
+                    </p>
+
+                    <p>
+                        And somehow,
+                        you make simple moments
+                        feel extraordinary.
+                    </p>
+
+                </div>
+
+
+                <button onclick="nextScreen()">
+                    One More Thing ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             SCREEN 5
+             HEART ANIMATION
+        ====================== -->
+
+        <section
+            class="screen"
+            id="screen5"
+        >
+
+            <div class="heart-story">
+
+
+                <!-- Cartoon character -->
+
+                <div class="cartoon small-character">
+
+                    <div class="hair"></div>
 
                     <div class="head">
 
                         <div class="eye left"></div>
+
                         <div class="eye right"></div>
 
                         <div class="blush left"></div>
+
                         <div class="blush right"></div>
 
                         <div class="mouth">
@@ -140,293 +358,213 @@
                     <div class="body"></div>
 
                     <div class="arm left-arm"></div>
+
                     <div class="arm right-arm"></div>
 
                     <div class="leg left-leg"></div>
+
                     <div class="leg right-leg"></div>
 
                 </div>
 
-                <div class="floating-heart">
+
+                <!-- HEART -->
+
+                <div id="heartBuild"></div>
+
+
+                <!-- LOVE TEXT -->
+
+                <h1 id="loveMessage"></h1>
+
+
+                <button
+                    class="continue-button"
+                    onclick="nextScreen()"
+                >
+                    Keep Going... 💗
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             SCREEN 6
+        ====================== -->
+
+        <section
+            class="screen"
+            id="screen6"
+        >
+
+            <div class="final-card">
+
+
+                <div class="final-photo">
+
+                    <img
+                        src="images/myimage.jpg"
+                        alt="Special Photo"
+                    >
+
+                </div>
+
+
+                <span class="final-small">
+                    THERE'S SOMETHING
+                    I WANT TO TELL YOU
+                </span>
+
+
+                <h1>
+                    You Are
+                    <span>Special</span>
+                    To Me.
+                </h1>
+
+
+                <p>
+                    Some feelings are difficult
+                    to explain with words.
+                </p>
+
+                <p>
+                    So maybe I should let
+                    my heart speak instead.
+                </p>
+
+
+                <button onclick="showProposal()">
+                    Read My Heart ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             PROPOSAL
+        ====================== -->
+
+        <section
+            class="screen"
+            id="proposal"
+        >
+
+            <div class="proposal-card">
+
+
+                <div class="proposal-background-heart">
                     ❤️
                 </div>
 
-            </div>
 
+                <div class="proposal-photo">
 
-            <div class="story-text">
-
-                <span class="chapter">
-                    CHAPTER 01
-                </span>
-
-                <h1>
-                    A Beautiful Beginning
-                </h1>
-
-                <p>
-                    Some people enter our lives quietly...
-                    and somehow make everything feel
-                    a little brighter.
-                </p>
-
-                <p>
-                    This little story is about one
-                    of those people.
-                </p>
-
-            </div>
-
-
-            <button onclick="nextScreen()">
-                Continue Our Story →
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================
-         SCREEN 4
-    ====================== -->
-
-    <section class="screen" id="screen4">
-
-        <div class="memory-card">
-
-            <div class="photo-wrapper">
-
-                <img
-                    src="images/myimage.jpg"
-                    alt="Memory"
-                >
-
-                <div class="photo-glow"></div>
-
-            </div>
-
-            <div class="memory-text">
-
-                <span>
-                    A LITTLE MEMORY
-                </span>
-
-                <h1>
-                    You Make Ordinary
-                    Moments Special.
-                </h1>
-
-                <p>
-                    Maybe it's just a picture,
-                    but behind every picture
-                    there is a feeling.
-                </p>
-
-                <p>
-                    And this one reminds me
-                    how beautiful a simple
-                    moment can become.
-                </p>
-
-            </div>
-
-            <button onclick="nextScreen()">
-                One More Thing ❤️
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================
-         SCREEN 5
-    ====================== -->
-
-    <section class="screen" id="screen5">
-
-        <div class="heart-story">
-
-            <div class="cartoon small-character">
-
-                <div class="head">
-
-                    <div class="eye left"></div>
-                    <div class="eye right"></div>
-
-                    <div class="blush left"></div>
-                    <div class="blush right"></div>
-
-                    <div class="mouth">
-                        ⌣
-                    </div>
+                    <img
+                        src="images/myimage.jpg"
+                        alt="Love"
+                    >
 
                 </div>
 
-                <div class="body"></div>
 
-                <div class="arm left-arm"></div>
-                <div class="arm right-arm"></div>
-
-                <div class="leg left-leg"></div>
-                <div class="leg right-leg"></div>
-
-            </div>
+                <span class="proposal-label">
+                    MY FINAL QUESTION
+                </span>
 
 
-            <div id="heartBuild"></div>
-
-            <h1 id="loveMessage">
+                <h1>
+                    Will You
+                    <br>
+                    <span>Be Mine?</span>
                 </h1>
 
-            <button onclick="nextScreen()">
-                Keep Going... 💗
-            </button>
 
-        </div>
+                <p>
+                    Not just for today...
+                </p>
 
-    </section>
-
-
-    <!-- =====================
-         SCREEN 6
-    ====================== -->
-
-    <section class="screen" id="screen6">
-
-        <div class="final-card">
-
-            <div class="final-photo">
-
-                <img
-                    src="images/myimage.jpg"
-                    alt="You"
-                >
-
-            </div>
-
-            <span class="final-small">
-                THERE'S SOMETHING
-                I WANT TO TELL YOU
-            </span>
-
-            <h1>
-                You are
-                <span>Special</span>
-                to me.
-            </h1>
-
-            <p>
-                More than words can explain.
-            </p>
-
-            <button onclick="showProposal()">
-                Read My Heart ❤️
-            </button>
-
-        </div>
-
-    </section>
+                <p>
+                    But for all the beautiful
+                    moments waiting ahead.
+                </p>
 
 
-    <!-- =====================
-         PROPOSAL
-    ====================== -->
+                <div class="proposal-buttons">
 
-    <section class="screen" id="proposal">
+                    <button
+                        class="yes-button"
+                        onclick="accepted()"
+                    >
+                        YES ❤️
+                    </button>
 
-        <div class="proposal-card">
 
-            <div class="big-heart">
-                ❤️
-            </div>
+                    <button
+                        class="yes-button second"
+                        onclick="accepted()"
+                    >
+                        OF COURSE 💕
+                    </button>
 
-            <div class="proposal-photo">
-
-                <img
-                    src="images/myimage.jpg"
-                    alt="Love"
-                >
+                </div>
 
             </div>
 
-            <span>
-                MY FINAL QUESTION
-            </span>
+        </section>
 
-            <h1>
-                Will You
-                <br>
-                Be Mine?
-            </h1>
 
-            <p>
-                Not just for today...
-                but for all the beautiful
-                moments waiting ahead.
-            </p>
+        <!-- =====================
+             FINAL SCREEN
+        ====================== -->
 
-            <div class="proposal-buttons">
+        <section
+            class="screen"
+            id="finalScreen"
+        >
 
-                <button
-                    class="yes-button"
-                    onclick="accepted()"
-                >
-                    YES ❤️
-                </button>
+            <div class="final-message">
 
-                <button
-                    class="maybe-button"
-                    onclick="accepted()"
-                >
-                    OF COURSE 💕
-                </button>
+
+                <div class="mega-heart">
+                    ❤️
+                </div>
+
+
+                <div class="final-title">
+                    I Knew It!
+                </div>
+
+
+                <p>
+                    Happy Birthday once again.
+                </p>
+
+
+                <p>
+                    May this be the beginning
+                    of something beautiful.
+                </p>
+
+
+                <div class="signature">
+                    Made with ❤️
+                </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =====================
-         FINAL SCREEN
-    ====================== -->
-
-    <section class="screen" id="finalScreen">
-
-        <div class="final-message">
-
-            <div class="mega-heart">
-                ❤️
-            </div>
-
-            <h1>
-                I Knew It! ❤️
-            </h1>
-
-            <p>
-                Happy Birthday once again.
-            </p>
-
-            <p>
-                May this be the beginning
-                of something beautiful.
-            </p>
-
-            <div class="signature">
-                Made with ❤️
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
+    </main>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

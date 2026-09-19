@@ -1,42 +1,90 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 :root {
-    --pink: #ff4d8d;
-    --dark-pink: #d81b60;
-    --white: #fff;
-    --glass: rgba(255,255,255,0.10);
+
+    --pink: #ff4f91;
+
+    --light-pink: #ff9ec5;
+
+    --deep-pink: #d91662;
+
+    --purple: #6d245f;
+
+    --dark: #08030c;
+
+    --white: #ffffff;
+
 }
+
+
+/* =========================================
+   BODY
+========================================= */
 
 body {
 
     min-height: 100vh;
 
+    overflow: hidden;
+
     font-family:
         "Poppins",
-        Arial,
         sans-serif;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #32132e,
-            #100714 60%,
-            #050307
-        );
 
     color: white;
 
-    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #461442 0%,
+            #1b0920 40%,
+            #07030b 100%
+        );
+
 }
 
 
-/* =========================
-   STARS
-========================= */
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 600px;
+
+    height: 600px;
+
+    left: 50%;
+
+    top: 45%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,70,150,.15),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+}
+
 
 .stars {
 
@@ -51,44 +99,52 @@ body {
             transparent 1px
         );
 
-    background-size: 55px 55px;
+    background-size:
+        55px 55px;
 
-    opacity: .25;
+    opacity: .28;
 
     animation:
-        starMove 15s linear infinite;
+        starMove 20s linear infinite;
 
     pointer-events: none;
+
 }
+
 
 @keyframes starMove {
 
     from {
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
     to {
-        transform: translateY(-55px);
+        transform:
+            translateY(-55px);
     }
+
 }
 
 
-/* =========================
+/* =========================================
    APP
-========================= */
+========================================= */
 
 #app {
 
+    position: relative;
+
     width: 100%;
+
     height: 100vh;
 
-    position: relative;
 }
 
 
-/* =========================
-   SCREENS
-========================= */
+/* =========================================
+   SCREEN
+========================================= */
 
 .screen {
 
@@ -96,28 +152,36 @@ body {
 
     inset: 0;
 
-    display: flex;
+    width: 100%;
 
-    justify-content: center;
+    height: 100%;
+
+    padding: 25px;
+
+    display: flex;
 
     align-items: center;
 
-    padding: 25px;
+    justify-content: center;
 
     opacity: 0;
 
     visibility: hidden;
 
     transform:
-        scale(.92)
-        translateY(30px);
+        scale(.94)
+        translateY(25px);
 
     transition:
-        opacity .8s ease,
-        transform .8s ease,
-        visibility .8s;
+
+        opacity .75s ease,
+
+        transform .75s ease,
+
+        visibility .75s ease;
 
 }
+
 
 .screen.active {
 
@@ -128,29 +192,32 @@ body {
     transform:
         scale(1)
         translateY(0);
+
 }
 
 
-/* =========================
+/* =========================================
    GLASS CARD
-========================= */
+========================================= */
 
 .glass-card {
 
-    width: min(700px, 95%);
+    width:
+        min(700px, 95%);
 
-    padding: 60px 30px;
+    padding:
+        55px 30px;
 
     text-align: center;
 
     border-radius: 35px;
 
     background:
-        rgba(255,255,255,.08);
+        rgba(255,255,255,.07);
 
     border:
         1px solid
-        rgba(255,255,255,.18);
+        rgba(255,255,255,.16);
 
     backdrop-filter:
         blur(20px);
@@ -158,58 +225,67 @@ body {
     box-shadow:
         0 30px 80px
         rgba(0,0,0,.45);
+
 }
 
 
-/* =========================
+/* =========================================
    TEXT
-========================= */
+========================================= */
 
 .small-label {
 
+    margin-bottom: 15px;
+
+    color:
+        var(--light-pink);
+
+    font-size: 11px;
+
     letter-spacing: 5px;
 
-    font-size: 12px;
+    font-weight: 600;
 
-    color: #ff9ac0;
-
-    margin-bottom: 20px;
 }
+
 
 h1 {
 
     font-size:
-        clamp(38px, 7vw, 75px);
+        clamp(40px, 7vw, 75px);
 
-    margin-bottom: 20px;
+    line-height: 1.05;
+
 }
+
 
 p {
 
-    color: #e8dbe4;
+    color:
+        #eadce7;
 
     line-height: 1.8;
 
-    font-size: 16px;
-}
+    font-size: 15px;
 
-h2 {
-
-    color: #ff8fba;
-
-    margin-bottom: 20px;
 }
 
 
-/* =========================
+/* =========================================
    BUTTON
-========================= */
+========================================= */
 
 button {
 
+    position: relative;
+
+    z-index: 20;
+
     border: none;
 
-    margin-top: 30px;
+    outline: none;
+
+    margin-top: 28px;
 
     padding:
         15px 28px;
@@ -218,7 +294,11 @@ button {
 
     color: white;
 
-    font-size: 15px;
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -227,454 +307,755 @@ button {
     background:
         linear-gradient(
             135deg,
-            #ff4d8d,
-            #b71555
+            #ff4f91,
+            #c91661
         );
 
     box-shadow:
-        0 10px 30px
-        rgba(255,77,141,.35);
+        0 10px 35px
+        rgba(255,60,140,.35);
 
     transition:
         .3s ease;
+
 }
+
 
 button:hover {
 
     transform:
         translateY(-4px)
-        scale(1.04);
+        scale(1.03);
 
     box-shadow:
-        0 15px 40px
-        rgba(255,77,141,.55);
+        0 15px 45px
+        rgba(255,60,140,.6);
+
 }
 
 
-/* =========================
+button:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+/* =========================================
    GIFT
-========================= */
+========================================= */
 
 .gift {
 
-    font-size: 100px;
+    margin:
+        30px 0;
 
-    margin: 30px;
+    font-size:
+        100px;
 
     animation:
-        giftFloat 2s ease-in-out infinite;
+        giftFloat 2s
+        ease-in-out
+        infinite;
+
 }
+
 
 @keyframes giftFloat {
 
-    0%,100% {
+    0%,
+    100% {
+
         transform:
             translateY(0)
             rotate(-3deg);
+
     }
 
     50% {
+
         transform:
-            translateY(-15px)
+            translateY(-16px)
             rotate(3deg);
+
     }
+
 }
 
 
-/* =========================
+/* =========================================
    BALLOONS
-========================= */
+========================================= */
 
 .balloons {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 35px;
+    gap:
+        25px;
 
-    font-size: 60px;
+    margin-bottom:
+        10px;
 
-    margin-bottom: 10px;
+    font-size:
+        55px;
+
 }
+
 
 .balloons span {
 
+    display:
+        inline-block;
+
     animation:
-        balloon 2s ease-in-out infinite;
+        balloonFloat
+        2s
+        ease-in-out
+        infinite;
+
 }
+
 
 .balloons span:nth-child(2) {
 
     animation-delay:
-        .3s;
+        .25s;
+
 }
+
 
 .balloons span:nth-child(3) {
 
     animation-delay:
-        .6s;
+        .5s;
+
 }
 
-@keyframes balloon {
 
-    0%,100% {
+@keyframes balloonFloat {
+
+    0%,
+    100% {
+
         transform:
             translateY(0);
+
     }
 
     50% {
+
         transform:
-            translateY(-20px);
+            translateY(-18px);
+
     }
+
 }
 
+
+/* =========================================
+   CAKE
+========================================= */
 
 .cake {
 
-    font-size: 90px;
+    font-size:
+        80px;
 
     animation:
-        cakePop 1s ease;
+        cakePop
+        .8s
+        ease;
+
 }
+
 
 @keyframes cakePop {
 
     from {
+
         transform:
-            scale(0);
+            scale(0)
+            rotate(-20deg);
+
     }
 
     to {
+
         transform:
-            scale(1);
+            scale(1)
+            rotate(0);
+
     }
+
 }
+
 
 .birthday-title {
 
-    color: #ff80b0;
+    margin:
+        10px 0;
+
+    color:
+        #ff78ad;
 
     text-shadow:
         0 0 30px
-        rgba(255,77,141,.7);
+        rgba(255,70,140,.65);
+
 }
 
 
-/* =========================
-   STORY
-========================= */
+.birthday-card h2 {
+
+    margin:
+        10px 0 20px;
+
+    color:
+        #ff9bc1;
+
+    font-size:
+        clamp(20px, 4vw, 30px);
+
+}
+
+
+/* =========================================
+   STORY CARD
+========================================= */
 
 .story-card {
 
-    width: min(900px, 95%);
+    width:
+        min(850px, 95%);
 
-    padding: 35px;
+    padding:
+        30px;
 
-    border-radius: 35px;
+    text-align:
+        center;
+
+    border-radius:
+        35px;
 
     background:
         rgba(255,255,255,.07);
 
     border:
         1px solid
-        rgba(255,255,255,.15);
+        rgba(255,255,255,.16);
 
     backdrop-filter:
         blur(20px);
 
-    text-align: center;
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.45);
+
 }
+
+
+/* =========================================
+   CHARACTER AREA
+========================================= */
 
 .character-area {
 
-    height: 240px;
+    position:
+        relative;
 
-    position: relative;
+    height:
+        230px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
+
 }
 
 
-/* =========================
-   CARTOON
-========================= */
+/* =========================================
+   CARTOON CHARACTER
+========================================= */
 
 .cartoon {
 
-    width: 130px;
+    position:
+        relative;
 
-    height: 190px;
+    width:
+        130px;
 
-    position: relative;
+    height:
+        190px;
 
     animation:
         characterFloat
-        3s ease-in-out infinite;
+        3s
+        ease-in-out
+        infinite;
+
 }
+
 
 @keyframes characterFloat {
 
-    0%,100% {
+    0%,
+    100% {
+
         transform:
             translateY(0);
+
     }
 
     50% {
+
         transform:
             translateY(-10px);
+
     }
+
 }
+
+
+/* Hair */
+
+.hair {
+
+    position:
+        absolute;
+
+    width:
+        85px;
+
+    height:
+        45px;
+
+    left:
+        22px;
+
+    top:
+        0;
+
+    background:
+        #30202c;
+
+    border-radius:
+        50% 50% 20% 20%;
+
+    z-index:
+        2;
+
+}
+
+
+/* Head */
 
 .head {
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 100px;
-    height: 100px;
+    width:
+        100px;
 
-    background: #fffaf7;
+    height:
+        100px;
 
-    border:
-        3px solid
-        #252027;
+    left:
+        15px;
 
-    border-radius: 45% 45% 48% 48%;
+    top:
+        8px;
 
-    left: 15px;
-    top: 5px;
-}
-
-.body {
-
-    position: absolute;
-
-    width: 75px;
-    height: 70px;
-
-    background: #fffaf7;
+    background:
+        #fffaf7;
 
     border:
         3px solid
-        #252027;
+        #251d24;
 
     border-radius:
-        40px 40px 25px 25px;
+        45% 45% 48% 48%;
 
-    left: 28px;
-    top: 98px;
+    z-index:
+        3;
+
 }
+
+
+/* Eyes */
 
 .eye {
 
-    width: 7px;
-    height: 7px;
+    position:
+        absolute;
 
-    background: #222;
+    top:
+        43px;
 
-    border-radius: 50%;
+    width:
+        7px;
 
-    position: absolute;
+    height:
+        7px;
 
-    top: 43px;
+    border-radius:
+        50%;
+
+    background:
+        #211a20;
+
 }
+
 
 .eye.left {
     left: 30px;
 }
 
+
 .eye.right {
     right: 30px;
 }
 
+
+/* Blush */
+
 .blush {
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 15px;
-    height: 7px;
+    top:
+        58px;
 
-    background: #ff9eae;
+    width:
+        16px;
 
-    border-radius: 50%;
+    height:
+        7px;
 
-    top: 55px;
+    border-radius:
+        50%;
 
-    opacity: .8;
+    background:
+        #ff9fb8;
+
+    opacity:
+        .8;
+
 }
+
 
 .blush.left {
-    left: 15px;
+    left: 14px;
 }
 
+
 .blush.right {
-    right: 15px;
+    right: 14px;
 }
+
+
+/* Mouth */
 
 .mouth {
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 42px;
+    left:
+        42px;
 
-    top: 52px;
+    top:
+        51px;
 
-    font-size: 16px;
+    font-size:
+        17px;
+
 }
+
+
+/* Body */
+
+.body {
+
+    position:
+        absolute;
+
+    width:
+        76px;
+
+    height:
+        72px;
+
+    left:
+        27px;
+
+    top:
+        100px;
+
+    background:
+        #fffaf7;
+
+    border:
+        3px solid
+        #251d24;
+
+    border-radius:
+        40px 40px 25px 25px;
+
+}
+
+
+/* Arms */
 
 .arm {
 
-    width: 45px;
-    height: 8px;
+    position:
+        absolute;
 
-    background: #fffaf7;
+    width:
+        46px;
+
+    height:
+        8px;
+
+    top:
+        113px;
+
+    background:
+        #fffaf7;
 
     border:
         3px solid
-        #252027;
+        #251d24;
 
-    position: absolute;
+    border-radius:
+        20px;
 
-    top: 112px;
+    z-index:
+        1;
 
-    border-radius: 10px;
 }
+
 
 .left-arm {
 
-    left: 0;
+    left:
+        -2px;
 
     transform:
         rotate(30deg);
+
 }
+
 
 .right-arm {
 
-    right: 0;
+    right:
+        -2px;
 
     transform:
         rotate(-30deg);
+
 }
+
+
+/* Legs */
 
 .leg {
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 9px;
-    height: 45px;
+    width:
+        10px;
 
-    background: #fffaf7;
+    height:
+        45px;
+
+    top:
+        158px;
+
+    background:
+        #fffaf7;
 
     border:
         3px solid
-        #252027;
+        #251d24;
 
-    top: 155px;
+    border-radius:
+        10px;
 
-    border-radius: 10px;
 }
+
 
 .left-leg {
     left: 43px;
 }
+
 
 .right-leg {
     right: 43px;
 }
 
 
-/* =========================
+/* =========================================
    FLOATING HEART
-========================= */
+========================================= */
 
 .floating-heart {
 
-    font-size: 45px;
+    position:
+        absolute;
 
-    position: absolute;
+    margin-left:
+        170px;
 
-    margin-left: 160px;
+    font-size:
+        45px;
 
     animation:
-        heartFloat 2s infinite;
+        heartFloat
+        2s
+        ease-in-out
+        infinite;
+
 }
+
 
 @keyframes heartFloat {
 
-    0%,100% {
+    0%,
+    100% {
 
         transform:
             translateY(0)
             scale(1);
+
     }
 
     50% {
 
         transform:
-            translateY(-20px)
+            translateY(-18px)
             scale(1.15);
+
     }
+
 }
+
+
+/* =========================================
+   STORY TEXT
+========================================= */
 
 .chapter {
 
-    color: #ff82ae;
+    display:
+        block;
 
-    letter-spacing: 4px;
+    margin-bottom:
+        12px;
 
-    font-size: 12px;
+    color:
+        #ff83af;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        5px;
+
 }
+
 
 .story-text h1 {
 
+    margin-bottom:
+        20px;
+
     font-size:
         clamp(32px, 6vw, 55px);
+
 }
 
 
-/* =========================
-   MEMORY
-========================= */
+.story-text p {
+
+    margin:
+        8px auto;
+
+    max-width:
+        650px;
+
+}
+
+
+/* =========================================
+   MEMORY CARD
+========================================= */
 
 .memory-card {
 
-    width: min(950px, 95%);
+    width:
+        min(950px, 95%);
 
-    padding: 35px;
+    padding:
+        35px;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 40px;
+    gap:
+        40px;
 
-    align-items: center;
+    align-items:
+        center;
+
+    border-radius:
+        35px;
 
     background:
         rgba(255,255,255,.07);
 
     border:
         1px solid
-        rgba(255,255,255,.15);
-
-    border-radius: 35px;
+        rgba(255,255,255,.16);
 
     backdrop-filter:
         blur(20px);
+
 }
+
 
 .photo-wrapper {
 
-    position: relative;
+    position:
+        relative;
 
-    border-radius: 30px;
+    overflow:
+        hidden;
 
-    overflow: hidden;
+    border-radius:
+        28px;
 
     transform:
         rotate(-3deg);
@@ -682,430 +1063,898 @@ button:hover {
     box-shadow:
         0 25px 60px
         rgba(0,0,0,.5);
+
 }
+
 
 .photo-wrapper img {
 
-    width: 100%;
+    display:
+        block;
 
-    display: block;
+    width:
+        100%;
 
-    aspect-ratio: 4 / 5;
+    aspect-ratio:
+        4 / 5;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
     transition:
-        transform .6s ease;
+        transform
+        .6s
+        ease;
+
 }
+
 
 .photo-wrapper:hover img {
 
     transform:
         scale(1.06);
+
 }
 
-.photo-glow {
 
-    position: absolute;
+.photo-shine {
 
-    inset: 0;
+    position:
+        absolute;
+
+    inset:
+        0;
 
     background:
         linear-gradient(
-            135deg,
-            rgba(255,100,160,.25),
-            transparent
+            120deg,
+            transparent 35%,
+            rgba(255,255,255,.25),
+            transparent 65%
         );
 
-    pointer-events: none;
-}
+    transform:
+        translateX(-120%);
 
-.memory-text span,
-.final-small {
+    animation:
+        shine
+        4s
+        infinite;
 
-    color: #ff83ad;
-
-    letter-spacing: 4px;
-
-    font-size: 11px;
 }
 
 
-/* =========================
+@keyframes shine {
+
+    0% {
+        transform:
+            translateX(-120%);
+    }
+
+    40%,
+    100% {
+        transform:
+            translateX(120%);
+    }
+
+}
+
+
+.memory-text span {
+
+    color:
+        #ff83af;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.memory-text h1 {
+
+    margin:
+        15px 0;
+
+    font-size:
+        clamp(30px, 5vw, 50px);
+
+}
+
+
+.memory-text p {
+
+    margin:
+        8px 0;
+
+}
+
+
+/* =========================================
    HEART STORY
-========================= */
+========================================= */
 
 .heart-story {
 
-    text-align: center;
+    width:
+        min(600px, 95%);
 
-    width: 95%;
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
 }
+
+
+/* Smaller cartoon */
 
 .small-character {
 
     transform:
-        scale(.75);
+        scale(.65);
 
     margin:
-        0 auto -20px;
+        -15px
+        auto
+        -15px;
+
 }
+
+
+/* =========================================
+   HEART CONTAINER
+========================================= */
 
 #heartBuild {
 
-    width: 330px;
+    position:
+        relative;
 
-    height: 280px;
+    width:
+        330px;
+
+    height:
+        270px;
 
     margin:
-        auto;
+        0 auto;
 
-    position: relative;
+    flex-shrink:
+        0;
+
 }
+
+
+/* Heart glow */
+
+#heartBuild::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,70,150,.18),
+            transparent 70%
+        );
+
+    filter:
+        blur(18px);
+
+    z-index:
+        -1;
+
+}
+
+
+/* Individual heart */
 
 .heart-dot {
 
-    position: absolute;
+    position:
+        absolute;
 
-    font-size: 18px;
+    display:
+        block;
+
+    font-size:
+        13px;
+
+    line-height:
+        1;
+
+    opacity:
+        0;
+
+    transform:
+        scale(0);
 
     animation:
-        heartAppear .5s ease forwards;
+        heartAppear
+        .55s
+        cubic-bezier(
+            .17,
+            .67,
+            .35,
+            1.3
+        )
+        forwards;
 
-    opacity: 0;
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(255,100,160,.7)
+        );
 
 }
+
 
 @keyframes heartAppear {
 
-    from {
+    0% {
 
-        opacity: 0;
-
-        transform:
-            scale(0);
-    }
-
-    to {
-
-        opacity: 1;
+        opacity:
+            0;
 
         transform:
-            scale(1);
+            scale(0)
+            rotate(-30deg);
+
     }
+
+    60% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.25)
+            rotate(8deg);
+
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
 }
+
+
+/* =========================================
+   LOVE MESSAGE
+========================================= */
 
 #loveMessage {
 
-    min-height: 80px;
+    position:
+        relative;
 
-    color: #ff75a8;
+    z-index:
+        10;
+
+    width:
+        100%;
+
+    min-height:
+        80px;
+
+    margin:
+        5px 0 0;
+
+    padding:
+        0 10px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #ff91ba;
+
+    font-family:
+        "Great Vibes",
+        cursive;
 
     font-size:
-        clamp(30px, 6vw, 55px);
+        clamp(50px, 9vw, 78px);
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        2px;
 
     text-shadow:
-        0 0 25px
-        rgba(255,60,130,.6);
+
+        0 0 8px
+        rgba(255,100,160,.9),
+
+        0 0 20px
+        rgba(255,60,140,.7),
+
+        0 0 40px
+        rgba(255,60,140,.4);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(15px)
+        scale(.8);
+
+    transition:
+        opacity
+        .8s
+        ease,
+
+        transform
+        .8s
+        ease;
+
 }
 
 
-/* =========================
+#loveMessage.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.continue-button {
+
+    margin-top:
+        20px;
+
+}
+
+
+/* =========================================
    FINAL CARD
-========================= */
+========================================= */
 
 .final-card {
 
-    text-align: center;
+    width:
+        min(650px, 95%);
 
-    width: min(650px, 95%);
+    padding:
+        45px 30px;
 
-    padding: 45px 30px;
+    text-align:
+        center;
+
+    border-radius:
+        35px;
 
     background:
-        rgba(255,255,255,.08);
+        rgba(255,255,255,.07);
 
     border:
         1px solid
-        rgba(255,255,255,.18);
-
-    border-radius: 35px;
+        rgba(255,255,255,.16);
 
     backdrop-filter:
         blur(20px);
+
 }
+
 
 .final-photo {
 
-    width: 150px;
+    width:
+        150px;
 
-    height: 150px;
+    height:
+        150px;
 
     margin:
         0 auto 25px;
 
-    border-radius: 50%;
+    padding:
+        5px;
 
-    padding: 5px;
+    border-radius:
+        50%;
 
     background:
         linear-gradient(
             135deg,
-            #ff4d8d,
-            #fff,
-            #ff4d8d
+            #ff4f91,
+            white,
+            #ff4f91
         );
 
     animation:
-        photoPulse 2s infinite;
+        photoPulse
+        2s
+        ease-in-out
+        infinite;
+
 }
+
 
 .final-photo img {
 
-    width: 100%;
-    height: 100%;
+    width:
+        100%;
 
-    object-fit: cover;
+    height:
+        100%;
 
-    border-radius: 50%;
+    object-fit:
+        cover;
+
+    border-radius:
+        50%;
 
     border:
         5px solid
-        #180b16;
+        #160914;
+
 }
+
 
 @keyframes photoPulse {
 
-    0%,100% {
+    0%,
+    100% {
+
         transform:
             scale(1);
+
     }
 
     50% {
+
         transform:
-            scale(1.05);
+            scale(1.06);
+
     }
+
 }
+
+
+.final-small {
+
+    color:
+        #ff83af;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.final-card h1 {
+
+    margin:
+        18px 0;
+
+}
+
 
 .final-card h1 span {
 
-    color: #ff6fa5;
+    color:
+        #ff6fa5;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,70,140,.5);
+
 }
 
 
-/* =========================
+/* =========================================
    PROPOSAL
-========================= */
+========================================= */
 
 .proposal-card {
 
-    text-align: center;
+    position:
+        relative;
 
-    width: min(650px, 95%);
+    overflow:
+        hidden;
 
-    padding: 35px;
+    width:
+        min(650px, 95%);
 
-    border-radius: 35px;
+    padding:
+        40px 30px;
+
+    text-align:
+        center;
+
+    border-radius:
+        35px;
 
     background:
-        rgba(255,255,255,.08);
+        rgba(255,255,255,.07);
 
     border:
         1px solid
-        rgba(255,255,255,.18);
+        rgba(255,255,255,.16);
 
     backdrop-filter:
         blur(20px);
 
-    position: relative;
-
-    overflow: hidden;
 }
 
-.big-heart {
 
-    position: absolute;
+.proposal-background-heart {
 
-    font-size: 250px;
+    position:
+        absolute;
 
-    opacity: .06;
+    left:
+        50%;
 
-    left: 50%;
-
-    top: 50%;
+    top:
+        50%;
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
+
+    font-size:
+        280px;
+
+    opacity:
+        .045;
+
+    pointer-events:
+        none;
+
 }
+
 
 .proposal-photo {
 
-    width: 130px;
-    height: 130px;
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    width:
+        135px;
+
+    height:
+        135px;
 
     margin:
         0 auto 25px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border:
         4px solid
-        #ff70a8;
+        #ff6fa5;
 
     box-shadow:
         0 0 40px
-        rgba(255,70,140,.4);
+        rgba(255,70,140,.5);
+
 }
+
 
 .proposal-photo img {
 
-    width: 100%;
-    height: 100%;
+    width:
+        100%;
 
-    object-fit: cover;
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
 }
 
-.proposal-card > span {
 
-    font-size: 11px;
+.proposal-label {
 
-    letter-spacing: 4px;
+    position:
+        relative;
 
-    color: #ff8bb5;
+    z-index:
+        3;
+
+    color:
+        #ff91ba;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        4px;
+
 }
+
 
 .proposal-card h1 {
 
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    margin:
+        20px 0;
+
     font-size:
-        clamp(45px, 9vw, 80px);
+        clamp(48px, 9vw, 78px);
 
-    color: white;
-
-    text-shadow:
-        0 0 30px
-        rgba(255,80,140,.5);
 }
+
+
+.proposal-card h1 span {
+
+    color:
+        #ff6fa5;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-weight:
+        400;
+
+}
+
 
 .proposal-card p {
 
-    max-width: 500px;
+    position:
+        relative;
 
-    margin:
-        auto;
+    z-index:
+        3;
+
 }
+
 
 .proposal-buttons {
 
-    display: flex;
+    position:
+        relative;
 
-    justify-content: center;
+    z-index:
+        5;
 
-    gap: 15px;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
 }
+
 
 .yes-button {
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff226f,
-            #ff0055
-        );
-
     animation:
-        yesPulse 1.5s infinite;
+        yesPulse
+        1.5s
+        ease-in-out
+        infinite;
+
 }
+
+
+.yes-button.second {
+
+    animation-delay:
+        .3s;
+
+}
+
 
 @keyframes yesPulse {
 
-    0%,100% {
+    0%,
+    100% {
+
         box-shadow:
             0 10px 30px
             rgba(255,0,90,.3);
+
     }
 
     50% {
+
         box-shadow:
             0 10px 50px
-            rgba(255,0,90,.8);
+            rgba(255,0,90,.75);
+
     }
+
 }
 
 
-/* =========================
-   FINAL
-========================= */
+/* =========================================
+   FINAL SCREEN
+========================================= */
 
 .final-message {
 
-    text-align: center;
+    text-align:
+        center;
+
 }
+
 
 .mega-heart {
 
-    font-size: 150px;
+    font-size:
+        150px;
 
     animation:
-        megaHeart 1s
-        ease-in-out infinite;
+        megaHeart
+        1.1s
+        ease-in-out
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(255,70,140,.7)
+        );
+
 }
+
 
 @keyframes megaHeart {
 
-    0%,100% {
+    0%,
+    100% {
+
         transform:
             scale(1);
+
     }
 
     50% {
+
         transform:
-            scale(1.2);
+            scale(1.18);
+
     }
+
 }
 
-.final-message h1 {
 
-    color: #ff70a8;
+.final-title {
+
+    font-size:
+        clamp(45px, 8vw, 75px);
+
+    font-weight:
+        800;
+
+    color:
+        #ff78ad;
 
     text-shadow:
-        0 0 35px
-        rgba(255,60,130,.6);
+        0 0 30px
+        rgba(255,70,140,.65);
+
 }
+
 
 .signature {
 
-    margin-top: 35px;
+    margin-top:
+        30px;
 
-    color: #ff91b7;
+    color:
+        #ff9ac0;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
+
 }
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* =========================================
+   FLOATING HEART PARTICLES
+========================================= */
 
 .floating {
 
-    position: fixed;
+    position:
+        fixed;
 
-    bottom: -30px;
+    bottom:
+        -40px;
 
-    font-size: 20px;
+    z-index:
+        100;
 
-    pointer-events: none;
+    pointer-events:
+        none;
+
+    font-size:
+        20px;
 
     animation:
         floatUp
-        linear forwards;
+        linear
+        forwards;
 
-    z-index: 100;
 }
+
 
 @keyframes floatUp {
 
@@ -1113,27 +1962,51 @@ button:hover {
 
         transform:
             translateY(0)
-            rotate(0);
+            rotate(0deg)
+            scale(1);
 
-        opacity: 1;
+        opacity:
+            1;
+
     }
 
     to {
 
         transform:
             translateY(-110vh)
-            rotate(360deg);
+            rotate(360deg)
+            scale(.7);
 
-        opacity: 0;
+        opacity:
+            0;
+
     }
+
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
-@media(max-width:700px) {
+@media (max-width: 700px) {
+
+
+    .screen {
+
+        padding:
+            15px;
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            40px 20px;
+
+    }
+
 
     .memory-card {
 
@@ -1141,50 +2014,126 @@ button:hover {
             1fr;
 
         max-height:
-            90vh;
+            92vh;
 
         overflow-y:
             auto;
+
+        padding:
+            25px 20px;
+
     }
+
 
     .photo-wrapper {
 
-        max-width: 280px;
+        width:
+            min(280px, 90%);
 
         margin:
             auto;
+
     }
+
 
     .story-card {
 
-        padding: 25px 18px;
+        padding:
+            25px 18px;
+
+        max-height:
+            92vh;
+
+        overflow-y:
+            auto;
+
     }
 
-    .glass-card {
+
+    .character-area {
+
+        height:
+            190px;
+
+    }
+
+
+    #heartBuild {
+
+        width:
+            310px;
+
+        height:
+            250px;
+
+    }
+
+
+    #loveMessage {
+
+        font-size:
+            52px;
+
+    }
+
+
+    .final-card {
 
         padding:
-            45px 20px;
+            35px 20px;
+
     }
+
 
     .proposal-card {
 
         padding:
-            30px 20px;
+            30px 18px;
+
     }
+
 
     .proposal-card h1 {
 
-        font-size: 50px;
+        font-size:
+            54px;
+
     }
 
-    .balloons {
 
-        font-size: 45px;
+    .mega-heart {
+
+        font-size:
+            110px;
+
     }
 
-    .cake {
+}
 
-        font-size: 70px;
+
+/* Very small phones */
+
+@media (max-width: 380px) {
+
+    #heartBuild {
+
+        transform:
+            scale(.88);
+
+        margin-top:
+            -15px;
+
+        margin-bottom:
+            -15px;
+
+    }
+
+
+    #loveMessage {
+
+        font-size:
+            45px;
+
     }
 
 }
